@@ -3,14 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { RatingModule } from 'ng-starrating';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    SearchComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RatingModule,
+    FormsModule         //to use [(ngModel)] == two way data binding
   ],
   providers: [],
   bootstrap: [AppComponent]

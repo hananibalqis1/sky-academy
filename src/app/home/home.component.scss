@@ -1,0 +1,82 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a{
+    height: 22.5rem;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #EF5C53;
+}
+
+ul li a img{
+    object-fit: cover;
+    width: auto;
+    height: 60%;
+}
+
+li a:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.content{
+    padding: .5rem 1rem;    //left right, top bottom
+    position: relative;     //to make ❤️ in an absolute position and make the position static if dont work with left and right
+}
+
+.favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.favorite.not{
+    color: gray;
+}
+
+.stars {
+    margin-bottom: .2rem;
+}
+
+.product-item-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category{
+    flex: 9;
+}
+
+.category span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 12px;
+    color: #545454;
+    margin-right: .3rem;
+    padding: .2rem .5rem;
+}
+
+.video-time{
+    font-size: 12px;
+    flex: 3;
+    text-align: right;
+}
+
+.price{
+    color: #EF5C53;
+    margin-top: .7rem;
+}

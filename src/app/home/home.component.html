@@ -1,0 +1,40 @@
+<app-search></app-search>
+<ul>
+    <li *ngFor="let course of courses">
+        <a href="">
+            <img src="{{ course.imageUrl }}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{course.title}}
+                </div>
+                <span class="favorite {{course.favorite ? '' : 'not'}}">
+                    ❤
+                </span>
+                <div class="stars">
+                    <star-rating 
+                    [value]="course.stars" 
+                    [totalstars]="5" 
+                        checkedcolor="#EF5C53" 
+                        uncheckedcolor="#545454" 
+                        size="16px" 
+                        [readonly]="true">
+                    </star-rating>
+                </div>
+                <div class="product-item-footer">
+                    <div class="category">
+                        <span *ngFor="let category of course.category">
+                            {{category}}
+                        </span>
+                    </div>
+                    <div class="video-time">
+                        <span>🕒</span>
+                        {{course.videoTime}}
+                    </div>
+                </div>
+                <div class="price">
+                    <span>{{course.price | currency}}</span>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
