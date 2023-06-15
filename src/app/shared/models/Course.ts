@@ -6,6 +6,6 @@ export class Course{        //make class accessible from the outside of Course.t
     favorite: boolean = false;
     stars: number = 0;
     imageUrl!: string;
-    category!: string[];    //Science, Robotic, Art, Cooking
+    categories!: string[];    //Science, Robotic, Art, Cooking
     videoTime!: string;
 }

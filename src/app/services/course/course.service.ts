@@ -11,8 +11,14 @@ export class CourseService {
 
   getAllCourseByCategory(category: string): Course[] {      //statement?doJob1:doJob2
     return category == "All" ? this.getAll() : this.getAll().filter((course) => {
-      course.category?.includes(category)
+      course.categories?.includes(category);
     });
+  }
+
+  getAllCourseBySearchTerm(searchTerm: string): Course[]{
+    return this.getAll().filter((course) => {
+      course.title.toLowerCase().includes(searchTerm.toLowerCase());
+    })
   }
 
   getAllCategory(): Category[] {
@@ -26,7 +32,7 @@ export class CourseService {
     { name: 'Fun', count: 3 },
     { name: 'Lego', count: 2 },
     { name: 'Healthy', count: 2 }
-   ] 
+   ];
   }
 
   getAll(): Course[] {    //called as Class
@@ -39,7 +45,7 @@ export class CourseService {
         favorite: true,
         stars: 3.2,
         imageUrl: '/assets/images/learn-science.jpg',
-        category: ['Science', 'Fun', 'Critical Thinking'],
+        categories: ['Science', 'Fun', 'Critical Thinking'],
         videoTime: '4-5',
       },
       {
@@ -50,7 +56,7 @@ export class CourseService {
         favorite: false,
         stars: 2.0,
         imageUrl: '/assets/images/learn-yoga.png',
-        category: ['Sports', 'Healthy', 'Fun'],
+        categories: ['Sports', 'Healthy', 'Fun'],
         videoTime: '10-20',
       },
       {
@@ -61,7 +67,7 @@ export class CourseService {
         favorite: false,
         stars: 3.2,
         imageUrl: '/assets/images/lego-stand.jpg',
-        category: ['Robotic', 'Lego', 'Critical Thinking'],
+        categories: ['Robotic', 'Lego', 'Critical Thinking'],
         videoTime: '4-5',
       },
       {
@@ -72,7 +78,7 @@ export class CourseService {
         favorite: true,
         stars: 3.7,
         imageUrl: '/assets/images/learn-sushi.jpg',
-        category: ['Cooking', 'Fun'],
+        categories: ['Cooking', 'Fun'],
         videoTime: '15-20',
       },
       {
@@ -83,7 +89,7 @@ export class CourseService {
         favorite: false,
         stars: 4.0,
         imageUrl: '/assets/images/learn-ballet.jpg',
-        category: ['Sports', 'Fun', 'Healthy'],
+        categories: ['Sports', 'Fun', 'Healthy'],
         videoTime: '15-20',
       },
       {
@@ -94,7 +100,7 @@ export class CourseService {
         favorite: true,
         stars: 4.6,
         imageUrl: '/assets/images/learn-lego.jpg',
-        category: ['Robotic', 'Lego', 'Critical Thinking'],
+        categories: ['Robotic', 'Lego', 'Critical Thinking'],
         videoTime: '20-30',
       }
     ]
