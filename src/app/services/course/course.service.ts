@@ -9,10 +9,12 @@ export class CourseService {
 
   constructor() { }
 
+  getCourseById(id: number): Course {
+    return this.getAll().find((course) => course.id == id)!   //will not return undefined when id not valid
+  }
+
   getAllCourseByCategory(category: string): Course[] {      //statement?doJob1:doJob2
-    return category == "All" ? this.getAll() : this.getAll().filter((course) => {
-      course.categories?.includes(category);
-    });
+    return category == "All" ? this.getAll() : this.getAll().filter((course) => course.categories?.includes(category));
   }
 
   getAllCourseBySearchTerm(searchTerm: string): Course[]{
@@ -41,7 +43,7 @@ export class CourseService {
         id: 1,
         title: 'Magic Pepper and Soap',
         price: 5,
-        status: ['Not yet enroll'],
+        status: ['Not yet enroll', 'Recommended'],
         favorite: true,
         stars: 3.2,
         imageUrl: '/assets/images/learn-science.jpg',
@@ -63,7 +65,7 @@ export class CourseService {
         id: 3,
         title: 'Lego Block | DIY Phone Stand',
         price: 5,
-        status: ['Not yet enroll'],
+        status: ['Not yet enroll', 'Recommended'],
         favorite: false,
         stars: 3.2,
         imageUrl: '/assets/images/lego-stand.jpg',
@@ -96,7 +98,7 @@ export class CourseService {
         id: 6,
         title: 'Move Your LEGO',
         price: 25,
-        status: ['Not yet enroll'],
+        status: ['Not yet enroll', 'Recommended'],
         favorite: true,
         stars: 4.6,
         imageUrl: '/assets/images/learn-lego.jpg',

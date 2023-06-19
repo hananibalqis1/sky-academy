@@ -9,6 +9,7 @@ import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from './categories/categories.component';
+import { CoursePageComponent } from './course-page/course-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CategoriesComponent } from './categories/categories.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    CoursePageComponent
   ],
   imports: [
     BrowserModule,

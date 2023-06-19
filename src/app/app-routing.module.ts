@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { CoursePageComponent } from './course-page/course-page.component';
 
 const routes: Routes = [
 { path: '',
@@ -13,6 +14,10 @@ const routes: Routes = [
 {
   path: 'category/:category',     //localhost:4200/category/{{course-category}}
   component: HomeComponent
+},
+{
+  path: 'course/:id',
+  component: CoursePageComponent
 }
 ];
 

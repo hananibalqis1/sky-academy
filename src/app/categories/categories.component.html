@@ -1,5 +1,11 @@
-<div *ngIf="categories">
+<div *ngIf="categories" [style.justifyContent]="justifyContent">
   <a *ngFor="let category of categories" routerLink="/category/{{category.name}}">
     {{ category.name }}({{ category.count }})
+  </a>
+</div>
+
+<div *ngIf="coursePageCategory" [style.justifyContent]="justifyContent">
+  <a *ngFor="let categoryName of coursePageCategory" routerLink="/category/{{categoryName}}">
+    {{ categoryName }}
   </a>
 </div>

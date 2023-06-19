@@ -2,7 +2,7 @@
 <app-categories></app-categories>
 <ul>
     <li *ngFor="let course of courses">
-        <a href="">
+        <a routerLink="/course/{{course.id}}">
             <img src="{{ course.imageUrl }}" alt="">
             <div class="content">
                 <div class="name">
@@ -15,10 +15,10 @@
                     <star-rating
                     [value]="course.stars"
                     [totalstars]="5"
-                        checkedcolor="#EF5C53"
-                        uncheckedcolor="#545454"
-                        size="16px"
-                        [readonly]="true">
+                    checkedcolor="#EF5C53"
+                    uncheckedcolor="#545454"
+                    size="16px"
+                    [readonly]="true">
                     </star-rating>
                 </div>
                 <div class="product-item-footer">

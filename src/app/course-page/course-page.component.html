@@ -1,0 +1,47 @@
+<div class="container">
+  <img [src]="course.imageUrl" [alt]="course.title">
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{course.title}}
+      </span>
+      <span class="favorite {{course.favorite? '' : 'not'}}">
+        ❤
+      </span>
+    </div>
+
+    <div class="rating">
+      <star-rating
+      [value]="course.stars"
+      [totalstars]="5"
+      checkedcolor="#EF5C53"
+      uncheckedcolor="#545454"
+      size="24px"
+      [readonly]="true">
+      </star-rating>
+    </div>
+
+    <div class="status">
+      <span *ngFor="let stat of course.status">
+        {{stat}}
+      </span>
+    </div>
+
+    <div class="category">
+      <app-categories [coursePageCategory]="course.categories" justifyContent="start"></app-categories>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Time to finish about <strong>{{course.videoTime}}</strong> minutes.
+      </span>
+    </div>
+
+    <div class="price">
+      <span>{{course.price|currency}}</span>
+    </div>
+
+    <button>Enroll Now</button>
+  </div>
+</div>
