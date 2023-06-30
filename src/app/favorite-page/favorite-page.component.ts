@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Favorite } from '../shared/models/Favorite';
 import { FavoriteService } from '../services/favorite/favorite.service';
 import { FavoriteItem } from '../shared/models/FavoriteItem';
+import { CourseService } from '../services/course/course.service';
 
 @Component({
   selector: 'app-favorite-page',

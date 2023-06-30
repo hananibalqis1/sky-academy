@@ -1,44 +1,46 @@
-<ul>
-  <li *ngFor="let favoriteItem of favorite.items">
-    <div>
-      <img [src]="favoriteItem.course.imageUrl" [alt]="favoriteItem.course.title">
-    </div>
+<div class="container">
+  <ul>
+    <li *ngFor="let favoriteItem of favorite.items">
+      <div>
+        <img [src]="favoriteItem.course.imageUrl" [alt]="favoriteItem.course.title">
+      </div>
 
-    <div>
-      <a routerLink="/course/{{favoriteItem.course.id}}">
-        {{favoriteItem.course.title}}
-      </a>
-    </div>
+      <div>
+        <a routerLink="/course/{{favoriteItem.course.id}}">
+          {{favoriteItem.course.title}}
+        </a>
+      </div>
 
-    <div>
-      <select #quantitySelect (change)="changeQuantity(favoriteItem, quantitySelect.value)">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
+      <div>
+        <select #quantitySelect (change)="changeQuantity(favoriteItem, quantitySelect.value)">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
 
-    <div>
-      {{favoriteItem.price | currency}}
-    </div>
+      <div>
+        {{favoriteItem.price | currency}}
+      </div>
 
-    <div>
-      <button class="remove-button" (click)="removeFavorite(favoriteItem)">
-        Remove
-      </button>
-    </div>
-  </li>
-</ul>
+      <div>
+        <button class="remove-button" (click)="removeFavorite(favoriteItem)">
+          Remove
+        </button>
+      </div>
+    </li>
+  </ul>
 
-<div class="checkout">
-  <div>
-    <div class="food-count">
-      {{favorite.items.length}}
-    </div>
-    <div class="total-price">
-      {{favorite.totalPrice | currency}}
+  <div class="checkout">
+    <div>
+      <div class="course-count">
+        {{favorite.items.length}}
+      </div>
+      <div class="total-price">
+        {{favorite.totalPrice | currency}}
+      </div>
     </div>
   </div>
 </div>
