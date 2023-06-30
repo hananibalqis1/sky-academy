@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from './categories/categories.component';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { FavoritePageComponent } from './favorite-page/favorite-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FavoritePageComponent } from './favorite-page/favorite-page.component';
     SearchComponent,
     CategoriesComponent,
     CoursePageComponent,
-    FavoritePageComponent
+    FavoritePageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

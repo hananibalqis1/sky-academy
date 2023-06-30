@@ -1,4 +1,6 @@
-<div class="container">
+<app-not-found [visible]="!favorite || favorite.items.length <= 0" notFoundMessage="Favorite Page is Empty" resetLinkText="Go To Homepage"></app-not-found>
+
+<div *ngIf="favorite && favorite.items.length > 0" class="container">
   <ul>
     <li *ngFor="let favoriteItem of favorite.items">
       <div>

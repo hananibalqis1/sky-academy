@@ -6,8 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit{
-  searchTerm: String = "";
-  
+  searchTerm: string = "";
+
   constructor(private route: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void {

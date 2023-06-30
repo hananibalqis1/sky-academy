@@ -1,4 +1,6 @@
-<div class="container">
+<app-not-found [visible]="!course" notFoundMessage="Course Not Found!" resetLinkText="Back To Homepage"></app-not-found>
+
+<div *ngIf="course" class="container">
   <img [src]="course.imageUrl" [alt]="course.title">
 
   <div class="details">
