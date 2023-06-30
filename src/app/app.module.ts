@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from './categories/categories.component';
 import { CoursePageComponent } from './course-page/course-page.component';
+import { FavoritePageComponent } from './favorite-page/favorite-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CoursePageComponent } from './course-page/course-page.component';
     HomeComponent,
     SearchComponent,
     CategoriesComponent,
-    CoursePageComponent
+    CoursePageComponent,
+    FavoritePageComponent
   ],
   imports: [
     BrowserModule,

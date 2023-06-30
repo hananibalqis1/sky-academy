@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CoursePageComponent } from './course-page/course-page.component';
+import { FavoritePageComponent } from './favorite-page/favorite-page.component';
 
 const routes: Routes = [
 { path: '',
@@ -18,6 +19,10 @@ const routes: Routes = [
 {
   path: 'course/:id',
   component: CoursePageComponent
+},
+{
+  path: 'favorite-page',
+  component: FavoritePageComponent
 }
 ];
 
