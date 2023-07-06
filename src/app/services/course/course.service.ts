@@ -1,34 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../../shared/models/Course';
 import { Category } from '../../shared/models/Category';
-import { sample_categories, sample_courses } from 'backend/src/data';
+import { HttpClient } from '@angular/common/http';
+import { COURSES_BY_CATEGORY_URL, COURSES_BY_ID_URL, COURSES_BY_SEARCH_URL, COURSES_CATEGORIES_URL, COURSES_URL } from 'src/app/shared/constants/urls';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getCourseById(id: number): Course {
-    return this.getAll().find((course) => course.id == id)!   //will not return undefined when id not valid
+  getAll(): Observable<Course[]> {
+    return this.http.get<Course[]>(COURSES_URL);    //<> return type of Course array
   }
 
-  getAllCourseByCategory(category: string): Course[] {      //statement?doJob1:doJob2
-    return category == "All" ? this.getAll() : this.getAll().filter((course) => course.categories?.includes(category));
+  getAllCourseBySearchTerm(searchTerm: string){
+    // return this.getAll().filter((course) => { course.title.toLowerCase().includes(searchTerm.toLowerCase()); })
+    return this.http.get<Course[]>(COURSES_BY_SEARCH_URL + searchTerm);
   }
 
-  getAllCourseBySearchTerm(searchTerm: string): Course[]{
-    return this.getAll().filter((course) => {
-      course.title.toLowerCase().includes(searchTerm.toLowerCase());
-    })
+  getAllCategory(): Observable<Category[]> {
+  //  return sample_categories;
+    return this.http.get<Category[]>(COURSES_CATEGORIES_URL);
   }
 
-  getAllCategory(): Category[] {
-   return sample_categories;
+  getAllCourseByCategory(category: string): Observable<Course[]> { //statement?doJob1:doJob2
+    // return category == "All" ? this.getAll() : this.getAll().filter((course) => course.categories?.includes(category));
+    return category === "All" ? this.getAll() : this.http.get<Course[]>(COURSES_BY_CATEGORY_URL + category);
   }
 
-  getAll(): Course[] {    //called as Class
-    return sample_courses;
+  getCourseById(id: number): Observable<Course> {
+    // return this.getAll().find((course) => course.id == id)!   //will not return undefined when id not valid
+    return this.http.get<Course>(COURSES_BY_ID_URL + id);
   }
+
 }

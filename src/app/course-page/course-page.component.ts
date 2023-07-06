@@ -13,14 +13,16 @@ export class CoursePageComponent implements OnInit{
   course!: Course;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private courseService: CourseService,
+    activatedRoute: ActivatedRoute,
+    courseService: CourseService,
     private favoriteService: FavoriteService,
     private router: Router
   ){
     activatedRoute.params.subscribe((params) => {
       if(params.id){
-        this.course = courseService.getCourseById(params.id);
+        courseService.getCourseById(params.id).subscribe(serverCourse => {
+          this.course = serverCourse;
+        });
       }
     })
   }

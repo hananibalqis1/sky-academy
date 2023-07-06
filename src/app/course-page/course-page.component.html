@@ -30,8 +30,14 @@
       </span>
     </div>
 
-    <div class="category">
+    <!-- <div class="category">
       <app-categories [coursePageCategory]="course.categories" justifyContent="start"></app-categories>
+    </div> -->
+
+    <div class="category">
+      <a *ngFor="let course of course.categories" routerLink="/course/{{course}}">
+        {{course}}
+      </a>
     </div>
 
     <div class="cook-time">

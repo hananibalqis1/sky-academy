@@ -6,21 +6,21 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit{
-  searchTerm: string = "";
+  searchTerm = '';
 
-  constructor(private route: ActivatedRoute, private router: Router){}
-
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
+  constructor(activatedRoute: ActivatedRoute, private router: Router){
+    activatedRoute.params.subscribe((params) => {
       if(params.searchTerm){        //if the searchTerm have any values
         this.searchTerm = params.searchTerm;
       }
-    })
+    });
   }
 
-  search(): void {    //want to able to change the route
-    if(this.searchTerm){
-      this.router.navigateByUrl(`/search/${this.searchTerm}`);
+  ngOnInit(): void {  }
+
+  search(term: string): void {    //want to able to change the route
+    if(term){
+      this.router.navigateByUrl('/search/' + term);
     }
   }
 

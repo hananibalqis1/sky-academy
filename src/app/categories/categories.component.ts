@@ -13,12 +13,12 @@ export class CategoriesComponent implements OnInit {
   @Input() justifyContent: string = 'center';
   categories?: Category[];    //empty array, set as nullable
 
-  constructor(private courseService: CourseService){}
-
-  ngOnInit(): void {
-    if(!this.coursePageCategory){
-      this.categories = this.courseService.getAllCategory();
-    }
+  constructor(courseService: CourseService){
+    courseService.getAllCategory().subscribe(serverCategories => {
+      this.categories = serverCategories;
+    });
   }
+
+  ngOnInit(): void {}
 
 }
