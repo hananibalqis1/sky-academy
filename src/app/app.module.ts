@@ -7,11 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './search/search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './categories/categories.component';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { FavoritePageComponent } from './favorite-page/favorite-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -22,14 +25,22 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CategoriesComponent,
     CoursePageComponent,
     FavoritePageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RatingModule,
     HttpClientModule,
-    FormsModule         //to use [(ngModel)] == two way data binding
+    FormsModule, //to use [(ngModel)] == two way data binding
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      newestOnTop: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -78,3 +78,20 @@ export const sample_categories: any[] = [
   { name: 'Lego', count: 2 },
   { name: 'Healthy', count: 2 }
 ]
+
+export const sample_users: any[] = [
+  {
+    name: "John Doe",
+    email: "john@gmail.com",
+    password: "12345",
+    address: "Kuala Lumpur",
+    isAdmin: true
+  },
+  {
+    name: "Jane Doe",
+    email: "jane@gmail.com",
+    password: "12345",
+    address: "Selangor",
+    isAdmin: true
+  }
+]

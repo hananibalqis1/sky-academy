@@ -5,3 +5,5 @@ export const COURSES_CATEGORIES_URL = COURSES_URL + '/categories'; //or export c
 export const COURSES_BY_SEARCH_URL = COURSES_URL + '/search/';
 export const COURSES_BY_CATEGORY_URL = COURSES_URL + '/category/';
 export const COURSES_BY_ID_URL = COURSES_URL + '/';   // http://localhost:5000/api/courses/4
+
+export const USER_LOGIN_URL = BASE_URL + '/api/users/login';
