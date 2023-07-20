@@ -3,12 +3,19 @@
         <a href="#" routerLink="/" class="logo">Sky Academy!</a>
         <nav>
             <ul>
-                <li>
-                  <a href="#" routerLink="/logout">Logout</a>
+                <li *ngIf="!isAuth">
+                  <a routerLink="/login">Login</a>
+                </li>
+                <li *ngIf="isAuth" class="menu-container">
+                  <a routerLink="/dashboard">{{user.name}}</a>
+                  <div class="menu">
+                    <a routerLink="/profile">Profile</a>
+                    <a (click)="logout()">Logout</a>
+                  </div>
                 </li>
                 <li>
                   <a href="#" routerLink="/favorite-page">Favorite <span *ngIf="favoriteQuantity">{{favoriteQuantity}}</span></a>
-              </li>
+                </li>
             </ul>
         </nav>
     </div>

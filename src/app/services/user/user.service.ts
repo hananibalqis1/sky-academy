@@ -37,6 +37,12 @@ export class UserService {
     );
   }      //create an interface, diff == cannot create new instance from an interface
 
+  logout(){
+    this.userSubject.next(new User());
+    localStorage.removeItem(USER_KEY);
+    window.location.reload();
+  }
+
   private setUserToLocalStorage(user: User){
     localStorage.setItem(USER_KEY, JSON.stringify(user));
   }

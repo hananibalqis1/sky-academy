@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoriteService } from '../services/favorite/favorite.service';
+import { UserService } from '../services/user/user.service';
+import { User } from '../shared/models/User';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +10,26 @@ import { FavoriteService } from '../services/favorite/favorite.service';
 })
 export class HeaderComponent implements OnInit{
   favoriteQuantity = 0;
+  user!: User;
 
-  constructor(favoriteService: FavoriteService){
+  constructor(favoriteService: FavoriteService, private userService: UserService){
     favoriteService.getFavoriteObservable().subscribe((newFav) => {
       this.favoriteQuantity = newFav.totalCount;
+    });
+
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
     })
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
+  logout(){
+    this.userService.logout();
+  }
+
+  get isAuth(){
+    return this.user.token;
+  }
 }
