@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   align-items: flex-start;  //start from top
   margin: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .ul{
@@ -90,16 +91,33 @@ ul .remove-button:hover{
   align-items: flex-start;
 }
 
-.checkout .course-count{
+.course-count{
   margin-bottom: 1.5rem;
 }
 
-.checkout .course-count::before{
+.course-count::before{
   content: 'Count: ';
   color: gray;
 }
 
-.checkout .total-price{
+.total-price{
   content: 'Price: ';
   color: grey;
+}
+
+.checkout a{
+  padding: 1rem;
+  color: white;
+  background: #EF5C53;
+  display: block;
+  width: 99%;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 0.7;
+  justify-self: center;
+}
+
+.checkout a:hover{
+  opacity: 1;
+  cursor: pointer;
 }

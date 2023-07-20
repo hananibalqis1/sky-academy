@@ -2,15 +2,10 @@ import { Course } from "./Course";
 
 export class FavoriteItem{
 
-  constructor(course: Course){
-    this.course = course;
-    this.price;
+  constructor(public course: Course){
+
   }
 
-  course: Course;
   quantity: number = 1;
-
-  get price(): number{       //instead of using getPrice()
-    return this.course.price * this.quantity;
-  }
+  price: number = this.course.price;
 }

@@ -14,7 +14,8 @@ import { FavoritePageComponent } from './favorite-page/favorite-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TitleComponent } from './title/title.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     CoursePageComponent,
     FavoritePageComponent,
     NotFoundComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

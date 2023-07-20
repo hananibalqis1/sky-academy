@@ -4,8 +4,11 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" routerLink="/favorite-page">Favorite</a>
+                  <a href="#" routerLink="/logout">Logout</a>
                 </li>
+                <li>
+                  <a href="#" routerLink="/favorite-page">Favorite <span *ngIf="favoriteQuantity">{{favoriteQuantity}}</span></a>
+              </li>
             </ul>
         </nav>
     </div>
